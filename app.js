@@ -953,10 +953,16 @@ function handleSubmit() {
       .removeClass("hidden good")
       .addClass("bad")
       .html(`
-        <div class="title">VALE ❌</div>
-        <div>Õiged vastused:</div>
-        <ul>${correctTexts.map(t => `<li>${escapeHtml(t)}</li>`).join("")}</ul>
-        <div class="small">Roheline = õige. Punane = sinu vale valik.</div>
+        <div style="text-align:center">
+            <img style="height:200px" src="v${Math.floor(Math.random() * 8) + 1}.gif"><img>
+        </div>
+        <div>
+            <div class="title">VALE ❌</div>
+            <div>Õiged vastused:</div>
+            <ul>${correctTexts.map(t => `<li>${escapeHtml(t)}</li>`).join("")}</ul>
+            <div class="small">Roheline = õige. Punane = sinu vale valik.</div>
+        </div>
+
       `);
 
     revealCorrectAndWrong(picked);
