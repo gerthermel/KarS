@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="et">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gerth äge äpp</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header class="topbar">
+      <div>
+        <h1>Made in Paikuse</h1>
+        <div class="stats" id="stats">
+          Tehtud: <b id="doneCount">0</b>/<b id="totalCount">0</b> ·
+          Õigeid: <b id="correctCount">0</b> ·
+          Tulem: <b id="percent">0%</b>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="restartBtn" class="btn btn-secondary" type="button">Alusta uuesti</button>
+      </div>
+    </header>
+
+    <main class="card">
+      <div id="quizArea">
+        <div class="progressWrap">
+          <div class="progressBar">
+            <div class="progressFill" id="progressFill"></div>
+          </div>
+          <div class="progressText" id="progressText">0%</div>
+        </div>
+
+        <div class="qmeta">
+          <div class="badge" id="qIndex">Küsimus -/-</div>
+          <div class="badge" id="qType">—</div>
+        </div>
+
+        <h2 class="question" id="questionText">Laen küsimust…</h2>
+
+        <form id="answersForm" class="answers"></form>
+
+        <div class="controls">
+          <button id="submitBtn" class="btn btn-primary" type="button">Kinnita vastus</button>
+          <button id="nextBtn" class="btn btn-secondary hidden" type="button">Järgmine küsimus</button>
+        </div>
+
+        <div id="feedback" class="feedback hidden"></div>
+      </div>
+
+      <div id="finishedArea" class="hidden">
+        <h2>Valmis 🎉</h2>
+        <p>
+          Tegid ära kõik küsimused.<br/>
+          Õigeid: <b id="finalCorrect">0</b> / <b id="finalTotal">0</b> (<b id="finalPercent">0%</b>)
+        </p>
+        <button id="restartBtn2" class="btn btn-primary" type="button">Tee uuesti</button>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <small>Vihje: kui küsimusel on mitu õiget, pead valima täpselt need (ei tohi valida lisaks valesid).</small>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
